@@ -1,0 +1,22 @@
+cat1=imread('C:\Users\User\Desktop\cat1.jpg')
+cat2=imread('C:\Users\User\Desktop\cat2.jpg')
+grayCat1=rgb2gray(cat1)
+grayCat2=rgb2gray(cat2)
+histGrayCat1=imhist(grayCat1, 25)
+histGrayCat2=imhist(grayCat2, 25)
+imhist(grayCat1, 25)
+imhist(grayCat2, 25)
+fprintf('Sample mean for histogram histGrayCat1 = %f', mean(histGrayCat1))
+fprintf('Sample mean for histogram histGrayCat2 = %f', mean(histGrayCat2))
+fprintf('RMS for histogram histGrayCat1 = %f', std(histGrayCat1));
+fprintf('RMS for histogram histGrayCat2 = %f', std(histGrayCat2))
+fprintf('Mode for histogram histGrayCat1 = %f', mode(histGrayCat1));
+fprintf('Mode for histogram histGrayCat2 = %f', mode(histGrayCat2));
+fprintf('Median for histogram histGrayCat1 = %f', median(histGrayCat1));
+fprintf('Median for histogram histGrayCat2 = %f', median(histGrayCat2));
+[R,P]=corrcoef(histGrayCat1, histGrayCat2);
+fprintf('Correlation coefficient of two histograms = %f', R(1,2));
+Rim=corr2(grayCat1,grayCat2);
+fprintf('Correlation coefficient of two images = %f', Rim);
+fprintf('Return value histGrayCat1 = %d', chi2gof(histGrayCat1));
+fprintf('Return value histGrayCat2 = %d', chi2gof(histGrayCat2));
