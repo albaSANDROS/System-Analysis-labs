@@ -1,0 +1,15 @@
+D:\SA_lab4\auto0.txt
+D:\SA_lab4\auto1.txt
+D:\SA_lab4\auto2.txt
+D:\SA_lab4\auto3.txt
+D:\SA_lab4\auto4.txt
+D:\SA_lab4\transport0.txt
+D:\SA_lab4\transport1.txt
+D:\SA_lab4\transport2.txt
+D:\SA_lab4\transport3.txt
+D:\SA_lab4\transport4.txt
+D:\SA_lab4\ecology0.txt
+D:\SA_lab4\ecology1.txt
+D:\SA_lab4\ecology2.txt
+D:\SA_lab4\ecology3.txt
+D:\SA_lab4\ecology4.txt

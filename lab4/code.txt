@@ -1,0 +1,65 @@
+f = fopen('D:\lab4\vocabulary1.txt', 'r');
+v1 = textscan(f, '%s');
+v1 = v1{1,1};
+fclose(f);
+
+f = fopen('D:\SA_lab4\vocabulary2.txt', 'r');
+v2 = textscan(f, '%s');
+v2 = v2{1,1};
+fclose(f);
+
+f = fopen('D:\SA_lab4\vocabulary3.txt', 'r');
+v3 = textscan(f, '%s');
+v3 = v3{1,1};
+fclose(f);
+
+f = fopen('D:\SA_lab4\texts.txt', 'r');
+texts = textscan(f, '%s');
+texts = texts{1,1};
+fclose(f);
+
+Matrix = [];
+
+for i = 1 : length(texts)
+
+	s = lower(fileread(char(texts(i, 1))));
+
+	N1 = 0;
+	for i = 1:length(v1) 
+		N1 = N1 + length(strfind(s, char(v1(i,1))));
+	end;
+
+	N2 = 0;
+	for i = 1:length(v2) 
+		N2 = N2 + length(strfind(s, char(v2(i,1))));
+	end;
+
+	N3 = 0;
+	for i = 1:length(v3)
+		N3 = N3 + length(strfind(s, char(v3(i,1))));
+	end;
+
+	Matrix = [Matrix [N1; N2; N3]];
+end;
+
+Matrix = Matrix.';
+
+load fisheriris
+[cidx2, cmeans2] = kmeans(Matrix, 3);
+ptsymb = {'bs','r^','md','go','c+'};
+
+for i = 1 : 3
+
+	clust = find(cidx2 == i);
+
+	plot3(Matrix(clust, 1), Matrix(clust, 2), Matrix(clust, 3), ptsymb{i});
+	hold on;
+
+	scatter3(cmeans2(i,1), cmeans2(i,2), cmeans2(i,3), 100, 'ko', 'filled');
+end;
+
+xlabel('AUTOMOBILE vocabulary');
+ylabel('TRANSPORT vocabulary');
+zlabel('ECOLOGY vocabulary');
+
+grid on;

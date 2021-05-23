@@ -1,0 +1,134 @@
+transport
+breakdown
+buddy seat
+cabstand
+helmet
+crossroad
+garage
+highway
+main
+passenger
+park
+parking place
+pedestrian
+ring road
+refuelling
+sidewallk
+station
+stowaway
+lights
+transit
+vehicle
+overland
+automobile
+bulldozer
+bus
+catafalque
+combine
+dust-cart
+exavator
+train
+jeep
+kar
+landrover
+loader
+lorry
+Metro
+motor bike
+motorcycle
+petrol tanker
+push-cycle
+taxi
+tram
+trolley bus
+truck
+undeground
+components
+boot
+brake
+bumper
+cab
+carburettor
+chassis
+cowling
+gas tank
+ignition
+iner tube
+motor
+pedal
+piston
+quater
+rear wheel
+shock-absorber
+speedometer
+trunk
+tyre
+wheel
+body
+cabriolet
+hatch-back
+jeep
+limousine
+sedan
+van
+universal
+railway
+barrier
+berth
+car
+compartment
+diesel
+electric
+electrotrain
+hand car
+local train
+locomotive
+platform
+semaphore
+steam
+suburban
+switch
+track
+tram
+train
+marine
+anchor
+aqualung
+bay
+buoy
+cable
+canvas
+compartment
+deck
+harbor
+hold
+jetty
+mast
+master
+moorage
+overboat
+rostrum
+scull
+seafaring
+shipping
+skin-diver
+sluice
+stern
+water craft
+boat
+dinghy
+ferry
+icebreaker
+raft
+sailer
+steamship
+steam-ship
+tanker
+tow
+yacht
+aviation
+aerobus
+airplane
+hang-glider
+helicopter
+undercarriage
