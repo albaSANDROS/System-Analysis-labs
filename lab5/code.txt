@@ -1,0 +1,44 @@
+%Файл с данными
+data = csvread('D:\SA_lab5\Goalie_Stats.csv');
+data = data.';
+
+%Выборка для обучения сети
+trainingData = [];
+for i = 1 : length(data) / 10
+	trainingData = [trainingData data(:,i*10)];
+end;
+
+%Создание сети
+net = selforgmap([3 3]);
+
+%Конфигурация входов (количество, пределы)
+net = configure(net,trainingData);
+
+%Обучение
+net.trainParam.epochs = 2000;
+net = train(net,trainingData);
+
+%Кластеризация исходных данных с помощью обученной сети
+result = sim(net, data);
+
+%Матрица весов входов нейронов
+w = net.IW{1};
+
+%Символы для разных кластеров на графике
+ptsymb = {'bs','r^','md','go','+','o','*','x','v','d','^','s','>','<'};
+
+%Вывод графика кластеризации по 1 и 2 признаку
+for i = 1 : length(data)
+
+	plot(data(1,i),data(2,i),ptsymb{find(result(:,i), 1)});
+	hold on;
+end;
+
+%Вывод весов для 1 и 2 компонент входного вектора
+scatter(w(:,1),w(:,2),100, 'ko', 'filled');
+
+%Оси
+xlabel('1');
+ylabel('2');
+
+grid on;
